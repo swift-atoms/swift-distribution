@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-position-primitives",
+    name: "swift-position",
     platforms: [
         .macOS(.v27),
         .iOS(.v27),
@@ -13,33 +13,33 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Position Primitives",
-            targets: ["Position Primitives"]
+            name: "Position",
+            targets: ["Position"]
         ),
         .library(
-            name: "Position Primitives Test Support",
-            targets: ["Position Primitives Test Support"]
+            name: "Position Test Support",
+            targets: ["Position Test Support"]
         ),
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "Position Primitives"
+            name: "Position"
         ),
         .target(
-            name: "Position Primitives Test Support",
+            name: "Position Test Support",
             dependencies: [
-                "Position Primitives"
+                "Position"
             ],
             path: "Tests/Support"
         ),
         .testTarget(
-            name: "Positioning Primitives Tests",
+            name: "Positioning Tests",
             dependencies: [
-                "Position Primitives",
-                "Position Primitives Test Support",
+                "Position",
+                "Position Test Support",
             ],
-            path: "Tests/Position Primitives Tests"
+            path: "Tests/Position Tests"
         ),
     ],
     swiftLanguageModes: [.v6]
