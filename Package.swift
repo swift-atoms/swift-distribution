@@ -17,28 +17,34 @@ let package = Package(
             targets: ["Position"]
         ),
         .library(
-            name: "Position Test Support",
-            targets: ["Position Test Support"]
+            name: "Position Standard Library Integration",
+            targets: ["Position Standard Library Integration"]
+        ),
+        .library(
+            name: "Position Apple Foundation Integration",
+            targets: ["Position Apple Foundation Integration"]
         ),
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "Position"
+            name: "Position",
+            dependencies: []
         ),
         .target(
-            name: "Position Test Support",
-            dependencies: [
-                "Position"
-            ],
-            path: "Tests/Support"
+            name: "Position Standard Library Integration",
+            dependencies: ["Position"]
         ),
-        .testTarget(
-            name: "Positioning Tests",
+        .target(
+            name: "Position Apple Foundation Integration",
             dependencies: [
                 "Position",
-                "Position Test Support",
-            ],
+                "Position Standard Library Integration",
+            ]
+        ),
+        .testTarget(
+            name: "Position Tests",
+            dependencies: ["Position"],
             path: "Tests/Position Tests"
         ),
     ],
