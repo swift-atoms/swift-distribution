@@ -44,7 +44,10 @@ let package = Package(
         ),
         .testTarget(
             name: "Position Tests",
-            dependencies: ["Position"],
+            dependencies: [
+                "Position",
+                "Position Standard Library Integration",
+            ],
             path: "Tests/Position Tests"
         ),
     ],

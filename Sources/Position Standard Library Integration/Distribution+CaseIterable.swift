@@ -1,4 +1,4 @@
-import Position
+public import Position
 
 extension Distribution: CaseIterable {
 
