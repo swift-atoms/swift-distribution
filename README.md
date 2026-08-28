@@ -1,4 +1,4 @@
-# Position Primitives
+# Position
 
 ![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
 
@@ -11,7 +11,7 @@ Layout value types for Swift — a vocabulary describing how items are positione
 `Distribution` describes how remaining space — what is left after item sizes and minimum spacing are accounted for — is allocated within a container along its main axis. It holds the *strategy* only: no layout engine, no rendering, no geometry math. The same value travels unchanged from the code that decides a layout to every layer that performs it.
 
 ```swift
-import Position_Primitives
+import Position
 
 // Pack items tight, or spread the slack between / around / evenly across them.
 let compact: Distribution = .fill
@@ -32,7 +32,7 @@ for distribution in Distribution.allCases {
 The space strategies live in the nested `Distribution.Space` enum — `between` (gaps only between items), `around` (half-space at the edges), and `evenly` (uniform space throughout, edges included). The `spaceBetween` / `spaceAround` / `spaceEvenly` static accessors are `@inlinable` shorthands for the corresponding `.space(_:)` cases, so call sites stay flat.
 
 ```swift
-import Position_Primitives
+import Position
 
 func gaps(for distribution: Distribution) -> String {
     switch distribution {
@@ -52,7 +52,7 @@ func gaps(for distribution: Distribution) -> String {
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-primitives/swift-position-primitives.git", branch: "main")
+    .package(url: "https://github.com/swift-atoms/swift-position.git", branch: "main")
 ]
 ```
 
@@ -60,7 +60,7 @@ dependencies: [
 .target(
     name: "App",
     dependencies: [
-        .product(name: "Position Primitives", package: "swift-position-primitives"),
+        .product(name: "Position", package: "swift-position"),
     ]
 )
 ```
@@ -75,7 +75,7 @@ One library product. Depends on no other package.
 
 | Product | Target | Purpose |
 |---------|--------|---------|
-| `Position Primitives` | `Sources/Position Primitives/` | The `Distribution` axis-distribution enum (`fill`, `space(_:)`), its nested `Distribution.Space` strategy enum (`between`, `around`, `evenly`), and the `spaceBetween` / `spaceAround` / `spaceEvenly` convenience accessors. |
+| `Position` | `Sources/Position/` | The `Distribution` axis-distribution enum (`fill`, `space(_:)`), its nested `Distribution.Space` strategy enum (`between`, `around`, `evenly`), and the `spaceBetween` / `spaceAround` / `spaceEvenly` convenience accessors. |
 
 Foundation-free.
 
