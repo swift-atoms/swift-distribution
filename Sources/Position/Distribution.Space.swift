@@ -1,6 +1,6 @@
 extension Distribution {
 
-    public enum Space: Sendable, Hashable {
+    public enum Space: Sendable, Hashable, CaseIterable {
 
         case between
 
@@ -9,3 +9,7 @@ extension Distribution {
         case evenly
     }
 }
+
+#if !hasFeature(Embedded)
+    extension Distribution.Space: Codable {}
+#endif
