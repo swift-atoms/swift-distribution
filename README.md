@@ -52,7 +52,7 @@ func gaps(for distribution: Distribution) -> String {
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-molecules/swift-position.git", branch: "main")
+    .package(url: "https://github.com/swift-atoms/swift-position.git", branch: "main")
 ]
 ```
 

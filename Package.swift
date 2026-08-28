@@ -16,28 +16,16 @@ let package = Package(
             name: "Position",
             targets: ["Position"]
         ),
-        .library(
-            name: "Position Test Support",
-            targets: ["Position Test Support"]
-        ),
     ],
     dependencies: [],
     targets: [
         .target(
             name: "Position"
         ),
-        .target(
-            name: "Position Test Support",
-            dependencies: [
-                "Position"
-            ],
-            path: "Tests/Support"
-        ),
         .testTarget(
-            name: "Positioning Tests",
+            name: "Position Tests",
             dependencies: [
-                "Position",
-                "Position Test Support",
+                .target(name: "Position"),
             ],
             path: "Tests/Position Tests"
         ),
