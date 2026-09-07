@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-position",
+    name: "swift-distribution",
     platforms: [
         .macOS(.v27),
         .iOS(.v27),
@@ -12,50 +12,50 @@ let package = Package(
         .visionOS(.v27),
     ],
     products: [
-        .library(name: "Position", targets: ["Position"]),
-        .library(name: "Position Standard Library Integration", targets: ["Position Standard Library Integration"]),
-        .library(name: "Position Foundation Library Integration", targets: ["Position Foundation Library Integration"]),
-        .library(name: "Position Test Support", targets: ["Position Test Support"]),
+        .library(name: "Distribution", targets: ["Distribution"]),
+        .library(name: "Distribution Standard Library Integration", targets: ["Distribution Standard Library Integration"]),
+        .library(name: "Distribution Foundation Library Integration", targets: ["Distribution Foundation Library Integration"]),
+        .library(name: "Distribution Test Support", targets: ["Distribution Test Support"]),
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "Position",
+            name: "Distribution",
             dependencies: [
             ],
-            path: "Sources/Position"
+            path: "Sources/Distribution"
         ),
         .target(
-            name: "Position Standard Library Integration",
+            name: "Distribution Standard Library Integration",
             dependencies: [
-                .target(name: "Position"),
+                .target(name: "Distribution"),
             ],
-            path: "Sources/Position Standard Library Integration"
+            path: "Sources/Distribution Standard Library Integration"
         ),
         .target(
-            name: "Position Foundation Library Integration",
+            name: "Distribution Foundation Library Integration",
             dependencies: [
-                .target(name: "Position"),
-                .target(name: "Position Standard Library Integration"),
+                .target(name: "Distribution"),
+                .target(name: "Distribution Standard Library Integration"),
             ],
-            path: "Sources/Position Foundation Library Integration"
+            path: "Sources/Distribution Foundation Library Integration"
         ),
         .target(
-            name: "Position Test Support",
+            name: "Distribution Test Support",
             dependencies: [
-                .target(name: "Position"),
+                .target(name: "Distribution"),
             ],
             path: "Tests/Support"
         ),
         .testTarget(
-            name: "Position Tests",
+            name: "Distribution Tests",
             dependencies: [
-                .target(name: "Position"),
-                .target(name: "Position Test Support"),
-                .target(name: "Position Standard Library Integration"),
-                .target(name: "Position Foundation Library Integration"),
+                .target(name: "Distribution"),
+                .target(name: "Distribution Test Support"),
+                .target(name: "Distribution Standard Library Integration"),
+                .target(name: "Distribution Foundation Library Integration"),
             ],
-            path: "Tests/Position Tests"
+            path: "Tests/Distribution Tests"
         ),
     ],
     swiftLanguageModes: [.v6]
