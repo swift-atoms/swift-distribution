@@ -13,8 +13,8 @@ let package = Package(
     ],
     products: [
         .library(name: "Distribution", targets: ["Distribution"]),
-        .library(name: "Distribution Standard Library Integration", targets: ["Distribution Standard Library Integration"]),
-        .library(name: "Distribution Foundation Library Integration", targets: ["Distribution Foundation Library Integration"]),
+
+        .library(name: "Distribution Foundation Integration", targets: ["Distribution Foundation Integration"]),
         .library(name: "Distribution Test Support", targets: ["Distribution Test Support"]),
     ],
     dependencies: [],
@@ -25,20 +25,13 @@ let package = Package(
             ],
             path: "Sources/Distribution"
         ),
+        
         .target(
-            name: "Distribution Standard Library Integration",
+            name: "Distribution Foundation Integration",
             dependencies: [
                 .target(name: "Distribution"),
             ],
-            path: "Sources/Distribution Standard Library Integration"
-        ),
-        .target(
-            name: "Distribution Foundation Library Integration",
-            dependencies: [
-                .target(name: "Distribution"),
-                .target(name: "Distribution Standard Library Integration"),
-            ],
-            path: "Sources/Distribution Foundation Library Integration"
+            path: "Sources/Distribution Foundation Integration"
         ),
         .target(
             name: "Distribution Test Support",
@@ -52,8 +45,7 @@ let package = Package(
             dependencies: [
                 .target(name: "Distribution"),
                 .target(name: "Distribution Test Support"),
-                .target(name: "Distribution Standard Library Integration"),
-                .target(name: "Distribution Foundation Library Integration"),
+                .target(name: "Distribution Foundation Integration"),
             ],
             path: "Tests/Distribution Tests"
         ),

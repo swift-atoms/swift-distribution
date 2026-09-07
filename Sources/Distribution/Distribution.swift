@@ -17,13 +17,6 @@ extension Distribution {
     public static var spaceEvenly: Self { .space(.evenly) }
 }
 
-extension Distribution: CaseIterable {
-
-    public static var allCases: [Distribution] {
-        [.fill, .space(.between), .space(.around), .space(.evenly)]
-    }
-}
-
 #if !hasFeature(Embedded)
-    extension Distribution: Codable {}
+extension Distribution: Swift.Codable {}
 #endif
