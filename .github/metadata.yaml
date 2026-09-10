@@ -1,5 +1,3 @@
-# .github/metadata.yaml
-# Triaged by AI-assisted bulk pass (2026-04-29).
 description: "A layout vocabulary for describing space distribution strategy along an axis, decoupled from any rendering engine, in Swift."
 topics:
   - molecules
