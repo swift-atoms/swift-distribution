@@ -45,7 +45,6 @@ let package = Package(
             dependencies: [
                 .target(name: "Distribution"),
                 .target(name: "Distribution Test Support"),
-                .target(name: "Distribution Foundation Integration"),
             ],
             path: "Tests/Distribution Tests"
         ),

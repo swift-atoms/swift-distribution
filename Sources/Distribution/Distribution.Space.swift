@@ -11,5 +11,5 @@ extension Distribution {
 }
 
 #if !hasFeature(Embedded)
-extension Distribution.Space: Swift.Codable {}
+extension Distribution.Space: Swift::Codable {}
 #endif
