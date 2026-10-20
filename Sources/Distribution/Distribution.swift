@@ -18,5 +18,5 @@ extension Distribution {
 }
 
 #if !hasFeature(Embedded)
-extension Distribution: Swift::Codable {}
+    extension Distribution: Swift::Codable {}
 #endif
