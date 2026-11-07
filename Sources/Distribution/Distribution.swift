@@ -20,3 +20,10 @@ extension Distribution {
 #if !hasFeature(Embedded)
     extension Distribution: Swift::Codable {}
 #endif
+
+extension Distribution: Swift::CaseIterable {
+
+    public static var allCases: [Distribution] {
+        [.fill, .space(.between), .space(.around), .space(.evenly)]
+    }
+}
